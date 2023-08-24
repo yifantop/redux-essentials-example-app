@@ -12,8 +12,8 @@ import { fetchUsers } from './features/users/usersSlice'
 async function start() {
   // Start our mock API server
   await worker.start({ onUnhandledRequest: 'bypass' })
-  
-  store.dispatch(fetchUsers());
+
+  store.dispatch(fetchUsers())
 
   ReactDOM.render(
     <React.StrictMode>
