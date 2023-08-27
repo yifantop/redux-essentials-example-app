@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-} from 'react-router-dom'
+} from 'react-router-dom';
 
 import { Navbar } from './app/Navbar';
 import { PostsList } from './features/posts/PostsList';
@@ -14,6 +14,7 @@ import { UserPage } from './features/users/UserPage';
 import { EditPostForm } from './features/posts/EditPostForm';
 import { UserList } from './features/users/UserList';
 import { NotificationsList } from './features/notifications/NotificationsList';
+import { Bin2DecPage } from './features/bin2Dec/Bin2DecPage';
 
 function App() {
   return (
@@ -35,12 +36,17 @@ function App() {
           <Route exact path="/editPosts/:postId" component={EditPostForm} />
           <Route exact path="/users" component={UserList}></Route>
           <Route exact path="/users/:userId" component={UserPage}></Route>
-          <Route exact path="/notifications" component={NotificationsList}></Route>
+          <Route
+            exact
+            path="/notifications"
+            component={NotificationsList}
+          ></Route>
+          <Route exact path="/bin2dec" component={Bin2DecPage}></Route>
           <Redirect to="/" />
         </Switch>
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
